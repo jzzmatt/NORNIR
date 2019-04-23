@@ -1,34 +1,54 @@
 ---
 global:
     data:
-        domain: victoria.local
-        asn: 6500
+        domain: gca.co.ao
+        snmp:
+          ip: ["10.30.99.241"]
+          local: "DATACENTER GCA CO AO"
+          contact: "support.helpdesk@bihangoal.net"
+          pub: "gca_pub"
+          wr: "gca_wr"
+          
+        dns_server:
+            ip:
+                - 10.110.0.1
+                - 10.110.0.2
+        tacacs:
+            method: "use-srvtacacs"
+            ip: ["10.30.10.10"]
+            key: "s3cr3t2016"
+            timeout: 5
+
+        loggin:
+            ip: 
+                - 10.30.99.251
+                - 10.30.99.244
+            traplevel: 7
+            severity: 7
+            size: 100000
+            monlevel: 7
+            consolevel: 7
 
 distribution-switch:
     data:
         type: "Switch"
-
 core-switch:
     data:
-        type: "Core"
-
+        asn: 6500
 test-device:
     data:
         type: "lab"
-
 edge-security-gateway:
     data:
         type: "vmware-nsx"
-
 nsx-controller:
     data:
         type: "vmware-nsx"
-
 nsx-management:
     data:
         type: "vmware-nsx"
-
-
 universal-dlr:
     data:
         type: "vmware-nsx"
+
+...

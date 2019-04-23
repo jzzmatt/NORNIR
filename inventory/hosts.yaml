@@ -133,33 +133,10 @@ CoreSPINEcuca01:
   - core-switch
   - global
   hostname: 10.104.127.1
-  password: admin2019
+  password: admin
   platform: ios
   username: admin
-CoreSPINEvictoria01:
-  data:
-    device_name: CoreSPINEvictoria01
-    interfaces:
-    - description: RID Victoria Spine
-      ip: 10.104.127.2
-      mgt_only: false
-      name: Loopback0
-      subnet: 255.255.255.255
-    - description: RendezVous MultiCast Victoria
-      ip: 10.104.127.254
-      mgt_only: false
-      name: Loopback1
-      subnet: 255.255.255.255
-    model: C6500
-    role: core-switch
-    site: VICTORIA
-  groups:
-  - core-switch
-  - global
-  hostname: 10.104.63.1
-  password: admin2019
-  platform: ios
-  username: admin
+
 dcgca.dhcp.server:
   data:
     device_name: dcgca.dhcp.server

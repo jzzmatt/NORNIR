@@ -1,0 +1,41 @@
+facts:
+  fqdn: CoreSPINEcuca01.gca.co.ao
+  hostname: CoreSPINEcuca01
+  interface_list: [GigabitEthernet1/1, GigabitEthernet1/2, GigabitEthernet1/3, GigabitEthernet1/4,
+    GigabitEthernet1/5, GigabitEthernet1/6, GigabitEthernet1/7, GigabitEthernet1/8,
+    GigabitEthernet1/9, GigabitEthernet1/10, GigabitEthernet1/11, GigabitEthernet1/12,
+    GigabitEthernet1/13, GigabitEthernet1/14, GigabitEthernet1/15, GigabitEthernet1/16,
+    GigabitEthernet1/17, GigabitEthernet1/18, GigabitEthernet1/19, GigabitEthernet1/20,
+    GigabitEthernet1/21, GigabitEthernet1/22, GigabitEthernet1/23, GigabitEthernet1/24,
+    GigabitEthernet2/1, GigabitEthernet2/2, GigabitEthernet2/3, GigabitEthernet2/4,
+    GigabitEthernet2/5, GigabitEthernet2/6, GigabitEthernet2/7, GigabitEthernet2/8,
+    GigabitEthernet2/9, GigabitEthernet2/10, GigabitEthernet2/11, GigabitEthernet2/12,
+    GigabitEthernet2/13, GigabitEthernet2/14, GigabitEthernet2/15, GigabitEthernet2/16,
+    GigabitEthernet2/17, GigabitEthernet2/18, GigabitEthernet2/19, GigabitEthernet2/20,
+    GigabitEthernet2/21, GigabitEthernet2/22, GigabitEthernet2/23, GigabitEthernet2/24,
+    GigabitEthernet2/25, GigabitEthernet2/26, GigabitEthernet2/27, GigabitEthernet2/28,
+    GigabitEthernet2/29, GigabitEthernet2/30, GigabitEthernet2/31, GigabitEthernet2/32,
+    GigabitEthernet2/33, GigabitEthernet2/34, GigabitEthernet2/35, GigabitEthernet2/36,
+    GigabitEthernet2/37, GigabitEthernet2/38, GigabitEthernet2/39, GigabitEthernet2/40,
+    GigabitEthernet2/41, GigabitEthernet2/42, GigabitEthernet2/43, GigabitEthernet2/44,
+    GigabitEthernet2/45, GigabitEthernet2/46, GigabitEthernet2/47, GigabitEthernet2/48,
+    GigabitEthernet3/1, GigabitEthernet3/2, GigabitEthernet3/3, GigabitEthernet3/4,
+    GigabitEthernet3/5, GigabitEthernet3/6, GigabitEthernet3/7, GigabitEthernet3/8,
+    GigabitEthernet3/9, GigabitEthernet3/10, GigabitEthernet3/11, GigabitEthernet3/12,
+    GigabitEthernet3/13, GigabitEthernet3/14, GigabitEthernet3/15, GigabitEthernet3/16,
+    GigabitEthernet3/17, GigabitEthernet3/18, GigabitEthernet3/19, GigabitEthernet3/20,
+    GigabitEthernet3/21, GigabitEthernet3/22, GigabitEthernet3/23, GigabitEthernet3/24,
+    GigabitEthernet3/25, GigabitEthernet3/26, GigabitEthernet3/27, GigabitEthernet3/28,
+    GigabitEthernet3/29, GigabitEthernet3/30, GigabitEthernet3/31, GigabitEthernet3/32,
+    GigabitEthernet3/33, GigabitEthernet3/34, GigabitEthernet3/35, GigabitEthernet3/36,
+    GigabitEthernet3/37, GigabitEthernet3/38, GigabitEthernet3/39, GigabitEthernet3/40,
+    GigabitEthernet3/41, GigabitEthernet3/42, GigabitEthernet3/43, GigabitEthernet3/44,
+    GigabitEthernet3/45, GigabitEthernet3/46, GigabitEthernet3/47, GigabitEthernet3/48,
+    GigabitEthernet5/1, GigabitEthernet5/2, GigabitEthernet6/1, GigabitEthernet6/2,
+    Loopback0, Vlan1]
+  model: WS-C6509-E
+  os_version: s72033_rp Software (s72033_rp-ADVENTERPRISEK9_WAN-M), Version 12.2(33)SXH8a,
+    RELEASE SOFTWARE (fc1)
+  serial_number: SMC1645002H
+  uptime: 600
+  vendor: Cisco

@@ -1,0 +1,6 @@
+{% for intf in host['interfaces'] %}
+interface {{ intf.name }}
+  ip address {{ intf.ip }} {{ intf.subnet }}
+!
+{% endfor %}
+

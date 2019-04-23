@@ -13,3 +13,928 @@ Traceback (most recent call last):
     os.chdir(dir_name)
 FileNotFoundError: [Errno 2] No such file or directory: './BACKUP'
 
+2019-04-23 15:11:39,139 -  nornir.core -     INFO -        run() - Running task 'get_host_fact' with args {} on 1 hosts
+2019-04-23 15:13:42,303 -  nornir.core -     INFO -        run() - Running task 'get_host_fact' with args {} on 1 hosts
+2019-04-23 15:15:15,346 -  nornir.core -     INFO -        run() - Running task 'get_host_fact' with args {} on 1 hosts
+2019-04-23 15:15:37,330 -  nornir.core -     INFO -        run() - Running task 'get_host_fact' with args {} on 1 hosts
+2019-04-23 15:16:20,900 -  nornir.core -     INFO -        run() - Running task 'get_host_fact' with args {} on 1 hosts
+2019-04-23 15:16:52,908 -  nornir.core -     INFO -        run() - Running task 'get_host_fact' with args {} on 1 hosts
+2019-04-23 15:17:33,468 -  nornir.core -     INFO -        run() - Running task 'get_host_fact' with args {} on 1 hosts
+2019-04-23 16:06:14,152 -  nornir.core -     INFO -        run() - Running task 'get_host_fact' with args {} on 1 hosts
+2019-04-23 16:06:20,894 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 16:06:20,945 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'Interface Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 187, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: interfaces.j2
+
+2019-04-23 16:06:20,947 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'send_template' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 82, in send_template
+    path="./templates"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Interface Configuration (failed)
+
+
+2019-04-23 16:07:48,245 -  nornir.core -     INFO -        run() - Running task 'get_host_fact' with args {} on 1 hosts
+2019-04-23 16:07:55,097 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 16:07:55,112 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'Interface Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 187, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: interfaces.j2
+
+2019-04-23 16:07:55,113 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'send_template' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 82, in send_template
+    path="./templates"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Interface Configuration (failed)
+
+
+2019-04-23 16:08:29,200 -  nornir.core -     INFO -        run() - Running task 'get_host_fact' with args {} on 1 hosts
+2019-04-23 16:08:36,056 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 16:08:36,071 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'Interface Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 187, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: interfaces.j2
+
+2019-04-23 16:08:36,073 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'send_template' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 82, in send_template
+    path="./templates"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Interface Configuration (failed)
+
+
+2019-04-23 16:09:17,809 -  nornir.core -     INFO -        run() - Running task 'get_host_fact' with args {} on 1 hosts
+2019-04-23 16:09:24,882 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 16:09:24,896 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'Interface Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 187, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: interfaces.j2
+
+2019-04-23 16:09:24,898 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'send_template' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 82, in send_template
+    path="templates"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Interface Configuration (failed)
+
+
+2019-04-23 16:10:01,586 -  nornir.core -     INFO -        run() - Running task 'get_host_fact' with args {} on 1 hosts
+2019-04-23 16:10:08,315 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 16:10:08,330 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'Interface Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 187, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: interfaces.j2
+
+2019-04-23 16:10:08,330 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'send_template' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 82, in send_template
+    path="./templates"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Interface Configuration (failed)
+
+
+2019-04-23 16:11:21,162 -  nornir.core -     INFO -        run() - Running task 'get_host_fact' with args {} on 1 hosts
+2019-04-23 16:11:28,311 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 16:11:28,325 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'Interface Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 187, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: interfaces.j2
+
+2019-04-23 16:11:28,326 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'send_template' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 82, in send_template
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Interface Configuration (failed)
+
+
+2019-04-23 16:14:29,536 -  nornir.core -     INFO -        run() - Running task 'get_host_fact' with args {} on 1 hosts
+2019-04-23 16:14:36,446 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 16:14:36,460 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'Interface Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 187, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: interfaces.j2
+
+2019-04-23 16:14:36,460 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'send_template' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 82, in send_template
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Interface Configuration (failed)
+
+
+2019-04-23 16:14:46,537 -  nornir.core -     INFO -        run() - Running task 'get_host_fact' with args {} on 1 hosts
+2019-04-23 16:14:53,606 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 16:14:53,621 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'Interface Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 187, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: interfaces.j2
+
+2019-04-23 16:14:53,621 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'send_template' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 82, in send_template
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Interface Configuration (failed)
+
+
+2019-04-23 16:16:47,426 -  nornir.core -     INFO -        run() - Running task 'get_host_fact' with args {} on 1 hosts
+2019-04-23 16:16:54,272 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 16:16:54,287 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'Interface Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 187, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: interfaces.j2
+
+2019-04-23 16:16:54,288 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'send_template' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 82, in send_template
+    path=".templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Interface Configuration (failed)
+
+
+2019-04-23 16:17:50,771 -  nornir.core -     INFO -        run() - Running task 'get_host_fact' with args {} on 1 hosts
+2019-04-23 16:17:57,705 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 16:17:57,720 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'Interface Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 187, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: interfaces.j2
+
+2019-04-23 16:17:57,720 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'send_template' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 82, in send_template
+    path="templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Interface Configuration (failed)
+
+
+2019-04-23 16:20:29,286 -  nornir.core -     INFO -        run() - Running task 'get_host_fact' with args {} on 1 hosts
+2019-04-23 16:20:36,039 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 16:20:36,054 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'send_template' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 82, in send_template
+    path=templates
+NameError: name 'templates' is not defined
+
+2019-04-23 16:21:46,794 -  nornir.core -     INFO -        run() - Running task 'get_host_fact' with args {} on 1 hosts
+2019-04-23 16:21:53,767 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 16:21:53,782 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'Interface Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 187, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: interfaces.j2
+
+2019-04-23 16:21:53,782 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'send_template' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 82, in send_template
+    path=f"{dir_template}"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Interface Configuration (failed)
+
+
+2019-04-23 16:23:33,517 -  nornir.core -     INFO -        run() - Running task 'get_host_fact' with args {} on 1 hosts
+2019-04-23 16:23:40,666 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 16:23:40,683 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'Interface Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 187, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: interfaces.j2
+
+2019-04-23 16:23:40,684 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'send_template' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 82, in send_template
+    path=f"{dir_template}"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Interface Configuration (failed)
+
+
+2019-04-23 16:24:21,463 -  nornir.core -     INFO -        run() - Running task 'get_host_fact' with args {} on 1 hosts
+2019-04-23 16:24:28,352 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 16:24:28,367 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'Interface Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+TypeError: template_file() missing 1 required positional argument: 'path'
+
+2019-04-23 16:24:28,369 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'send_template' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 81, in send_template
+    template="interfaces.j2",
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Interface Configuration (failed)
+
+
+2019-04-23 16:29:44,654 -  nornir.core -     INFO -        run() - Running task 'get_host_fact' with args {} on 1 hosts
+2019-04-23 16:29:51,520 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 16:29:51,534 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'Interface Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 187, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: interfaces.j2
+
+2019-04-23 16:29:51,535 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'send_template' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 82, in send_template
+    path=""
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Interface Configuration (failed)
+
+
+2019-04-23 16:31:19,184 -  nornir.core -     INFO -        run() - Running task 'get_host_fact' with args {} on 1 hosts
+2019-04-23 16:31:25,944 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 16:31:25,958 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'Interface Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 187, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: base_intf.j2
+
+2019-04-23 16:31:25,959 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'send_template' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 82, in send_template
+    path="templates"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Interface Configuration (failed)
+
+
+2019-04-23 16:32:11,602 -  nornir.core -     INFO -        run() - Running task 'get_host_fact' with args {} on 1 hosts
+2019-04-23 16:32:18,466 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 16:32:18,481 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'Interface Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 187, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: base_intf.j2
+
+2019-04-23 16:32:18,482 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'send_template' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 82, in send_template
+    path="/templates"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Interface Configuration (failed)
+
+
+2019-04-23 16:32:45,585 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 16:32:45,600 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'Interface Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 187, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: base_intf.j2
+
+2019-04-23 16:32:45,601 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'send_template' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 86, in send_template
+    path="/templates"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Interface Configuration (failed)
+
+
+2019-04-23 16:32:57,461 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 16:32:57,476 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'Interface Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 187, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: base_intf.j2
+
+2019-04-23 16:32:57,476 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'send_template' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 86, in send_template
+    path="/templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Interface Configuration (failed)
+
+
+2019-04-23 16:33:04,811 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 16:33:04,847 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'Interface Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 591, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "./templates/base_intf.j2", line 4, in template
+    {% for intf in host['facts']['facts']['interface_list]' %}
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 194, in parse_for
+    extra_end_rules=('name:recursive',))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 620, in parse_tuple
+    args.append(parse())
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 612, in <lambda>
+    parse = lambda: self.parse_expression(with_condexpr=False)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 433, in parse_expression
+    return self.parse_or()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 450, in parse_or
+    left = self.parse_and()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 459, in parse_and
+    left = self.parse_not()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 470, in parse_not
+    return self.parse_compare()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 474, in parse_compare
+    expr = self.parse_math1()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 496, in parse_math1
+    left = self.parse_concat()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 507, in parse_concat
+    args = [self.parse_math2()]
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 517, in parse_math2
+    left = self.parse_pow()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 528, in parse_pow
+    left = self.parse_unary()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 547, in parse_unary
+    node = self.parse_postfix(node)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 672, in parse_postfix
+    node = self.parse_subscript(node)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 713, in parse_subscript
+    args.append(self.parse_subscribed())
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 729, in parse_subscribed
+    node = self.parse_expression()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 432, in parse_expression
+    return self.parse_condexpr()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 437, in parse_condexpr
+    expr1 = self.parse_or()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 450, in parse_or
+    left = self.parse_and()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 459, in parse_and
+    left = self.parse_not()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 470, in parse_not
+    return self.parse_compare()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 474, in parse_compare
+    expr = self.parse_math1()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 496, in parse_math1
+    left = self.parse_concat()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 507, in parse_concat
+    args = [self.parse_math2()]
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 520, in parse_math2
+    next(self.stream)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/lexer.py", line 359, in __next__
+    self.current = next(self._iter)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/lexer.py", line 562, in wrap
+    for lineno, token, value in stream:
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/lexer.py", line 690, in tokeniter
+    filename)
+jinja2.exceptions.TemplateSyntaxError: unexpected '}', expected ']'
+
+2019-04-23 16:33:04,847 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'send_template' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 86, in send_template
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Interface Configuration (failed)
+
+
+2019-04-23 16:33:53,271 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 16:33:53,294 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'Interface Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 591, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "./templates/base_intf.j2", line 4, in template
+    {% for intf in host['facts']['facts']['interface_list]' %}
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 194, in parse_for
+    extra_end_rules=('name:recursive',))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 620, in parse_tuple
+    args.append(parse())
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 612, in <lambda>
+    parse = lambda: self.parse_expression(with_condexpr=False)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 433, in parse_expression
+    return self.parse_or()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 450, in parse_or
+    left = self.parse_and()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 459, in parse_and
+    left = self.parse_not()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 470, in parse_not
+    return self.parse_compare()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 474, in parse_compare
+    expr = self.parse_math1()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 496, in parse_math1
+    left = self.parse_concat()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 507, in parse_concat
+    args = [self.parse_math2()]
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 517, in parse_math2
+    left = self.parse_pow()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 528, in parse_pow
+    left = self.parse_unary()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 547, in parse_unary
+    node = self.parse_postfix(node)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 672, in parse_postfix
+    node = self.parse_subscript(node)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 713, in parse_subscript
+    args.append(self.parse_subscribed())
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 729, in parse_subscribed
+    node = self.parse_expression()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 432, in parse_expression
+    return self.parse_condexpr()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 437, in parse_condexpr
+    expr1 = self.parse_or()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 450, in parse_or
+    left = self.parse_and()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 459, in parse_and
+    left = self.parse_not()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 470, in parse_not
+    return self.parse_compare()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 474, in parse_compare
+    expr = self.parse_math1()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 496, in parse_math1
+    left = self.parse_concat()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 507, in parse_concat
+    args = [self.parse_math2()]
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 520, in parse_math2
+    next(self.stream)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/lexer.py", line 359, in __next__
+    self.current = next(self._iter)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/lexer.py", line 562, in wrap
+    for lineno, token, value in stream:
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/lexer.py", line 690, in tokeniter
+    filename)
+jinja2.exceptions.TemplateSyntaxError: unexpected '}', expected ']'
+
+2019-04-23 16:33:53,295 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'send_template' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 86, in send_template
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Interface Configuration (failed)
+
+
+2019-04-23 16:34:01,462 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 16:34:01,490 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'Interface Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 18, in render_from_file
+    return t.render(**kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "./templates/base_intf.j2", line 4, in top-level template code
+    {% for intf in host['facts']['facts']['interface_list'] %}
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 411, in getitem
+    return obj[argument]
+jinja2.exceptions.UndefinedError: 'nornir.core.inventory.Host object' has no attribute 'facts'
+
+2019-04-23 16:34:01,490 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'send_template' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 86, in send_template
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Interface Configuration (failed)
+
+
+2019-04-23 16:35:07,699 -  nornir.core -     INFO -        run() - Running task 'get_host_fact' with args {} on 1 hosts
+2019-04-23 16:35:14,741 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 16:35:14,756 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'Interface Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 187, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: base_intf.j2
+
+2019-04-23 16:35:14,756 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'send_template' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 83, in send_template
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Interface Configuration (failed)
+
+
+2019-04-23 16:46:30,602 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 16:46:30,616 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'send_template' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 81, in send_template
+    task=load_yaml,
+NameError: name 'load_yaml' is not defined
+
+2019-04-23 16:48:26,075 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 16:48:26,092 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'load_yaml' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/data/load_yaml.py", line 24, in load_yaml
+    with open(file, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: './FACTS/CSR1000v-lab+_fact.yml'
+
+2019-04-23 16:48:26,092 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'send_template' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 83, in send_template
+    file=f'{dir_fact}/{task.host}+_fact.yml'
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: load_yaml (failed)
+
+
+2019-04-23 16:48:54,613 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 17:15:10,086 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 17:29:11,219 -  nornir.core -     INFO -        run() - Running task 'get_host_fact' with args {} on 1 hosts
+2019-04-23 17:29:11,344 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/netmiko/base_connection.py", line 858, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/paramiko/client.py", line 362, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.104.127.1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/napalm/base/base.py", line 87, in _netmiko_open
+    **netmiko_optional_args
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/netmiko/ssh_dispatcher.py", line 228, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/netmiko/base_connection.py", line 312, in __init__
+    self.establish_connection()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/netmiko/base_connection.py", line 864, in establish_connection
+    raise NetMikoTimeoutException(msg)
+netmiko.ssh_exception.NetMikoTimeoutException: Connection to device timed-out: cisco_ios 10.104.127.1:22
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/networking/napalm_get.py", line 49, in napalm_get
+    device = task.host.get_connection("napalm", task.nornir.config)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/inventory.py", line 302, in get_connection
+    extras=conn.extras,
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/inventory.py", line 352, in open_connection
+    configuration=configuration,
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/connections/napalm.py", line 51, in open
+    connection.open()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/napalm/ios/ios.py", line 151, in open
+    device_type, netmiko_optional_args=self.netmiko_optional_args
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/napalm/base/base.py", line 90, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.104.127.1
+
+2019-04-23 17:29:11,345 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'get_host_fact' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 41, in get_host_fact
+    get_fact = task.run(task=networking.napalm_get, getters=['facts'])
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2019-04-23 17:29:11,444 -  nornir.core -     INFO -        run() - Running task 'get_backup' with args {} on 1 hosts
+2019-04-23 17:29:11,569 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 18:01:34,543 -  nornir.core -     INFO -        run() - Running task 'get_host_fact' with args {} on 1 hosts
+2019-04-23 18:01:40,972 -  nornir.core -     INFO -        run() - Running task 'get_backup' with args {} on 1 hosts
+2019-04-23 18:01:48,582 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'get_backup' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 59, in get_backup
+    savetodir(output, dir_backup, task.host)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 72, in savetodir
+    os.chdir(dir_name)
+FileNotFoundError: [Errno 2] No such file or directory: './BACKUP'
+
+2019-04-23 18:01:48,614 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-23 18:05:01,967 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
