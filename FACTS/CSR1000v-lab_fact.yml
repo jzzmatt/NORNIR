@@ -1,0 +1,10 @@
+facts:
+  fqdn: CSR1000v-lab.victoria.local
+  hostname: CSR1000v-lab
+  interface_list: [GigabitEthernet1, GigabitEthernet2, Loopback0]
+  model: CSR1000V
+  os_version: CSR1000V Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version 15.5(3)S,
+    RELEASE SOFTWARE (fc6)
+  serial_number: 902TIULCL5J
+  uptime: 677040
+  vendor: Cisco

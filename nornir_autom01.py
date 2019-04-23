@@ -79,9 +79,9 @@ def main():
     #Deploy INFRA DIRECTORY
     deploy_directory()
     #RUN DEVICE FACT
-    #print_title("Get Host Fact Using NAPALM")
-    #result = nr.filter(site="VICTORIA", role="test-device").run(task=get_host_fact)
-    #print_result(result)
+    print_title("Get Host Fact Using NAPALM")
+    result = nr.filter(site="VICTORIA", role="test-device").run(task=get_host_fact)
+    print_result(result)
 
     #RUN A PRE BACKUP BEFORE CHANGES
     print_title("Perform a Backup before Changes")

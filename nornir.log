@@ -1,1 +1,15 @@
 2019-04-23 11:00:17,534 -  nornir.core -     INFO -        run() - Running task 'get_backup' with args {} on 1 hosts
+2019-04-23 12:22:05,105 -  nornir.core -     INFO -        run() - Running task 'get_backup' with args {} on 1 hosts
+2019-04-23 12:23:08,464 -  nornir.core -     INFO -        run() - Running task 'get_backup' with args {} on 1 hosts
+2019-04-23 12:29:42,169 -  nornir.core -     INFO -        run() - Running task 'get_host_fact' with args {} on 1 hosts
+2019-04-23 12:29:49,190 -  nornir.core -     INFO -        run() - Running task 'get_backup' with args {} on 1 hosts
+2019-04-23 12:29:54,542 - nornir.core.task -    ERROR -      start() - Host 'CSR1000v-lab': task 'get_backup' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 51, in get_backup
+    savetodir(output, dir_backup, task.host)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 65, in savetodir
+    os.chdir(dir_name)
+FileNotFoundError: [Errno 2] No such file or directory: './BACKUP'
+
