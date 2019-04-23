@@ -1,0 +1,6 @@
+interfaces Loopback1
+  ip address 10.1.1.1 255.255.255.255
+
+{% for intf in host.data['interfaces'] %}
+{{ intf.ip | ipaddr('address') }}
+{% endfor %} 

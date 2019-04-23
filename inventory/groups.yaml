@@ -1,0 +1,34 @@
+---
+global:
+    data:
+        domain: victoria.local
+        asn: 6500
+
+distribution-switch:
+    data:
+        type: "Switch"
+
+core-switch:
+    data:
+        type: "Core"
+
+test-device:
+    data:
+        type: "lab"
+
+edge-security-gateway:
+    data:
+        type: "vmware-nsx"
+
+nsx-controller:
+    data:
+        type: "vmware-nsx"
+
+nsx-management:
+    data:
+        type: "vmware-nsx"
+
+
+universal-dlr:
+    data:
+        type: "vmware-nsx"

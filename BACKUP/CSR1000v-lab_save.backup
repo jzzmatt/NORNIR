@@ -1,0 +1,178 @@
+Building configuration...
+
+  
+Current configuration : 2386 bytes
+!
+! Last configuration change at 16:06:55 UTC Tue Apr 16 2019
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR1000v-lab
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+ip domain name victoria.local
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 902TIULCL5J
+!
+spanning-tree extend system-id
+!
+username admin privilege 15 password 0 admin2019
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 1.1.1.1 255.255.255.0
+!
+interface GigabitEthernet1
+ platform ring rx 256
+ ip address dhcp
+ negotiation auto
+!
+interface GigabitEthernet2
+ ip address 172.16.1.4 255.255.255.0
+ negotiation auto
+!
+router bgp 65002
+ bgp log-neighbor-changes
+ network 1.1.1.0 mask 255.255.255.0
+ neighbor 172.16.1.5 remote-as 65002
+ neighbor 172.16.1.5 update-source GigabitEthernet1
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+ip scp server enable
+!
+access-list 100 permit icmp any any
+access-list 100 permit tcp any any eq domain
+access-list 100 permit tcp any any eq www
+access-list 100 permit tcp any any eq 443
+!
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+banner motd ^C 
+ _       ___  ______                       
+| |     / _ \ | ___ \                      
+| |    / /_\ \| |_/ /                      
+| |    |  _  || ___ \                      
+| |____| | | || |_/ /                      
+\_____/\_| |_/\____/                       
+                                           
+                                           
+ _   _  _____ _____ ___                    
+| \ | ||  ___|_   _/   |                   
+|  \| || |__   | |/ /| |___ _   _ _ __ ___ 
+| . ` ||  __|  | / /_| / __| | | | '__/ _ \
+| |\  || |___  | \___  \__ \ |_| | | |  __/
+\_| \_/\____/  \_/   |_/___/\__,_|_|  \___|
+                                           
+                                           
+ ^C
+!
+line con 0
+ stopbits 1
+line vty 0
+ privilege level 15
+ login local
+ transport input ssh
+line vty 1
+ privilege level 15
+ login local
+ length 0
+ transport input ssh
+line vty 2 4
+ privilege level 15
+ login local
+ transport input ssh
+!
+ntp server devicehelper.cisco.com
+!
+end
