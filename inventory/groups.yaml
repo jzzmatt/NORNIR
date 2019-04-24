@@ -8,6 +8,18 @@ global:
           contact: "support.helpdesk@bihangoal.net"
           pub: "gca_pub"
           wr: "gca_wr"
+
+        kron:
+          name: "AUTO_BKP_CFG"
+
+        ftp:
+          ip: 10.30.23.1
+          username: ciscoBKP
+          password: ciscoBKP
+
+        ntp:
+          ip:
+            - 10.30.99.254
           
         dns_server:
             ip:
@@ -29,6 +41,7 @@ global:
             monlevel: 7
             consolevel: 7
 
+
 distribution-switch:
     data:
         type: "Switch"
@@ -45,6 +58,8 @@ core-switch:
             - {name: VMW_VLAN_VXLAN, tag: "807"}
             - {name: VMW_VLAN_LINK_VIRTUAL_TO_FISIC, tag: "808"}
             - {name: VMW_VLAN_VCENTER_HA, tag: "809"}
+        vtp:
+            mode: "transparent"
         
             
 test-device:

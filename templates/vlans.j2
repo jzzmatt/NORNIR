@@ -3,4 +3,8 @@ vlan {{ vlan.tag }}
    name {{ vlan.name }}
 !
 {% endfor %}
+!
+vtp mode {{ host.vtp.mode }}
+vtp domain {{ host.domain }}
+  
    

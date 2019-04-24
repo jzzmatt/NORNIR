@@ -1,0 +1,14 @@
+
+{% set srcintf=host.interfaces | selectattr('name', 'equalto', 'Loopback0') | map(attribute='name') | list %}
+ip ftp source-interface {{ srcintf|join() }}
+ip ftp username {{ host.ftp.username }}
+ip ftp password 7 {{ host.ftp.password }}
+!
+kron policy-list {{ host.kron.name }}
+ cli sh startup-config | redirect ftp://{{ host.ftp.ip }}/{{ host.device_name }}STARTUP
+ cli sh running-config | redirect ftp://{{ host.ftp.ip }}/{{ host.device_name }}RUNNING
+!
+kron occurrence Semanal-BKP at 21:30 Fri recurring
+ policy-list {{ host.kron.name }}
+!
+

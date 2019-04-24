@@ -1,0 +1,5 @@
+clock timezone WAT 1 0
+{% for ip in host.ntp.ip %}
+ntp server {{ ip }}
+{% endfor %}
+!

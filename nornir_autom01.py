@@ -80,13 +80,17 @@ def savetodir(file_name, dir_name, hostname):
     with open(f'{hostname}{offset}', 'w') as f:
         f.write(file_name)
     print(f'Have successfully save {file_name} to {dir_name}')
-def send_template(task):
+def interface_templates(task):
     #Load FACT file into Host Attributes
     fact_file = task.run(
         task=load_yaml,
         file=f'{dir_fact}/{task.host}_fact.yml'
     )
     task.host['facts'] = fact_file.result
+
+    config = services_templates(task)
+    config += "\n\n"
+
     #SETUP VLANS
     r = task.run(
         task=text.template_file,
@@ -119,6 +123,52 @@ def send_template(task):
     #Save the Compile Config to FACT DIR
     savetodir(config, dir_config, task.host)
 
+def services_templates(task):
+    #SETUP TIME & NTP
+    r = task.run(
+        task=text.template_file,
+        name="SETUP TIME & NTP",
+        template="ntp.j2",
+        path="./templates/"
+    )
+    config = r.result
+    config += "\n\n"
+
+    #SETUP LOGGING & ARCHIVE
+    r = task.run(
+        task=text.template_file,
+        name="SETUP LOGGIN & ARCHIVE",
+        template="loggin.j2",
+        path="./templates/"
+    )
+    config += r.result
+    config += "\n\n"
+
+    # SETUP AAA & TACACS
+    r = task.run(
+        task=text.template_file,
+        name="SETUP AAA & TACACS",
+        template="aaa.j2",
+        path="./templates/"
+    )
+    config += r.result
+    config += "\n\n"
+
+    # SETUP KRONE JOB  & FTP
+    r = task.run(
+        task=text.template_file,
+        name="SETUP KRON JOB & FTP SERVER",
+        template="kron.j2",
+        path="./templates/"
+    )
+    config += r.result
+    config += "\n\n"
+
+
+    return config
+
+def routing_templates(task):
+    pass
 def main():
     print_title("Deploy INFRA DIRECTORY")
     deploy_directory()
@@ -131,15 +181,15 @@ def main():
     nr.filter(site="CUCA", role="core-switch").run(task=get_backup)
 
     print_title("Send Template to HOST")
-    output = nr.filter(site="CUCA", role="core-switch").run(task=send_template)
+    output = nr.filter(site="CUCA", role="core-switch").run(task=interface_templates)
     print_result(output)
 
 
 if __name__ == '__main__':
     print_title("Send Template to HOST")
-    output = nr.filter(site="CUCA", role="core-switch").run(task=send_template)
+    output = nr.filter(site="CUCA", role="core-switch").run(task=interface_templates)
     print_result(output)
-    #print(nr.inventory.hosts['CoreSPINEcuca01'].keys())
+    #print(nr.inventory.hosts['CoreSPINEcuca01']['interfaces'])
     #main()
     #print(nr.inventory.hosts['CoreSPINEcuca01']['vlans'])
 

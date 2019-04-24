@@ -1,0 +1,28 @@
+archive
+  log config
+    loggin enable
+    loggin size {{ host.loggin.size }}
+    notify syslog contenttype plaintext
+    hidekeys
+  path ftp://{{ host.ftp.ip }}/$h-$t
+  write-memory
+  !
+loggin on
+{% for srv in host.loggin.ip %}
+loggin {{ srv }}
+{% endfor %}
+{% if host.loggin.severity is defined %}
+loggin buffered {{ host.loggin.severity }}
+{% endif %}
+{% if host.loggin.size is defined %}
+loggin buffered {{ host.loggin.size }}
+{% endif %}
+{% if host.loggin.traplevel is defined %}
+loggin trap {{ host.loggin.traplevel }}
+{% endif %}
+{% if host.loggin.monlevel is defined %}
+loggin monitor {{ host.loggin.monlevel }}
+{% endif %}
+{% if host.loggin.consolevel is defined %}
+loggin console {{ host.loggin.consolevel }}
+{% endif %}
