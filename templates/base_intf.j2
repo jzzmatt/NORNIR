@@ -1,5 +1,10 @@
 {% for intf in host['interfaces'] %}
+{% if intf.tag is defined %}
+interface vlan {{ intf.tag }}
+{% else %}
 interface {{ intf.name }}
+{% endif %}
+  description {{ intf.description }}
   ip address {{ intf.ip }} {{ intf.subnet }}
 !
 {% endfor %}

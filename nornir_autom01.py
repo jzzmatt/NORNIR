@@ -87,15 +87,37 @@ def send_template(task):
         file=f'{dir_fact}/{task.host}_fact.yml'
     )
     task.host['facts'] = fact_file.result
+    #SETUP VLANS
+    r = task.run(
+        task=text.template_file,
+        name="SETUP VLANS",
+        template="vlans.j2",
+        path="./templates/"
+    )
+    config = r.result
+    config += "\n\n"
+
+    # SETUP SPANNING TREE
+    r = task.run(
+        task=text.template_file,
+        name="SETUP SPANNING TREE",
+        template="stp.j2",
+        path="./templates/"
+    )
+    config = r.result
+    config += "\n\n"
+
     # SETUP INTERFACES
     r = task.run(
         task=text.template_file,
-        name="Interface Configuration",
+        name="IINTERFACE CONFIGURATION",
         template="base_intf.j2",
         path="./templates/"
     )
+    config += r.result
+    config += "\n\n"
     #Save the Compile Config to FACT DIR
-    savetodir(r.result, dir_config, task.host)
+    savetodir(config, dir_config, task.host)
 
 def main():
     print_title("Deploy INFRA DIRECTORY")
@@ -117,8 +139,9 @@ if __name__ == '__main__':
     print_title("Send Template to HOST")
     output = nr.filter(site="CUCA", role="core-switch").run(task=send_template)
     print_result(output)
+    #print(nr.inventory.hosts['CoreSPINEcuca01'].keys())
     #main()
-    #print(nr.inventory.hosts['CSR1000v-lab']['interfaces'])
+    #print(nr.inventory.hosts['CoreSPINEcuca01']['vlans'])
 
 
 

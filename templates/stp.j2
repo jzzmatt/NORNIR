@@ -1,0 +1,13 @@
+{% set vlan_lst = host.vlans | map(attribute="tag") | list %}
+spanning-tree mode rapid-pvst
+spanning-tree loopguard default
+spanning-tree portfast default
+spanning-tree portfast bpduguard default
+spanning-tree portfast bpdufilter default
+spanning-tree extend system-id
+spanning-tree uplinkfast
+spanning-tree backbonefast
+spanning-tree vlan {{ vlan_lst | join(',') }} priority 4096
+!
+errdisable recovery cause all
+errdisable recovery interval 30

@@ -1,0 +1,6 @@
+{% for vlan in host.vlans %}
+vlan {{ vlan.tag }}
+   name {{ vlan.name }}
+!
+{% endfor %}
+   

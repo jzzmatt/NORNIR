@@ -938,3 +938,204 @@ FileNotFoundError: [Errno 2] No such file or directory: './BACKUP'
 
 2019-04-23 18:01:48,614 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
 2019-04-23 18:05:01,967 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-24 08:55:19,192 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-24 09:06:10,039 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-24 09:06:10,114 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'Interface Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 591, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "./templates/base_intf.j2", line 2, in template
+    {% if intf.tag is defined %%}}
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 199, in parse_for
+    body = self.parse_statements(('name:endfor', 'name:else'))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 165, in parse_statements
+    result = self.subparse(end_tokens)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 211, in parse_if
+    node.test = self.parse_tuple(with_condexpr=False)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 620, in parse_tuple
+    args.append(parse())
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 612, in <lambda>
+    parse = lambda: self.parse_expression(with_condexpr=False)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 433, in parse_expression
+    return self.parse_or()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 450, in parse_or
+    left = self.parse_and()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 459, in parse_and
+    left = self.parse_not()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 470, in parse_not
+    return self.parse_compare()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 474, in parse_compare
+    expr = self.parse_math1()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 496, in parse_math1
+    left = self.parse_concat()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 507, in parse_concat
+    args = [self.parse_math2()]
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 521, in parse_math2
+    right = self.parse_pow()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 528, in parse_pow
+    left = self.parse_unary()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 546, in parse_unary
+    node = self.parse_primary()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 583, in parse_primary
+    self.fail("unexpected '%s'" % describe_token(token), token.lineno)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 59, in fail
+    raise exc(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: unexpected 'end of statement block'
+
+2019-04-24 09:06:10,114 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'send_template' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 95, in send_template
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Interface Configuration (failed)
+
+
+2019-04-24 09:06:45,713 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-24 09:06:45,755 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'Interface Configuration' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 591, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "./templates/base_intf.j2", line 4, in template
+    {% else %%}}
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 199, in parse_for
+    body = self.parse_statements(('name:endfor', 'name:else'))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 165, in parse_statements
+    result = self.subparse(end_tokens)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 223, in parse_if
+    drop_needle=True)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 164, in parse_statements
+    self.stream.expect('block_end')
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/lexer.py", line 384, in expect
+    self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: expected token 'end of statement block', got '%'
+
+2019-04-24 09:06:45,756 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'send_template' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 95, in send_template
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: Interface Configuration (failed)
+
+
+2019-04-24 09:07:22,527 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-24 09:08:02,542 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-24 09:16:25,384 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-24 09:57:20,740 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-24 10:02:08,919 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-24 10:02:52,973 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-24 10:05:15,811 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-24 10:05:43,650 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-24 10:06:51,950 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-24 10:07:28,228 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-24 10:12:27,093 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-24 10:12:27,117 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'SETUP VLANS' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 591, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "./templates/vlans.j2", line 1, in template
+    {% for vlan int host.vlans %}
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 192, in parse_for
+    self.stream.expect('name:in')
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/lexer.py", line 384, in expect
+    self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: expected token 'in', got 'int'
+
+2019-04-24 10:12:27,118 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'send_template' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 95, in send_template
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: SETUP VLANS (failed)
+
+
+2019-04-24 10:12:43,842 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts
+2019-04-24 10:24:22,620 -  nornir.core -     INFO -        run() - Running task 'send_template' with args {} on 1 hosts

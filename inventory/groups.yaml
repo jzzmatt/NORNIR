@@ -35,6 +35,18 @@ distribution-switch:
 core-switch:
     data:
         asn: 6500
+        vlans:
+            - {name: VMW_VLAN_PROV2, tag: "801"}
+            - {name: VMW_VLAN_ILO_NEW, tag: "802"}
+            - {name: VMW_VLAN_VMWARE_NEW, tag: "803"}
+            - {name: VMW_VLAN_STORAGE_NEW, tag: "804"}
+            - {name: VMW_VLAN_V_VMOTION, tag: "805"}
+            - {name: VMW_VLAN_FAULT_TOLERANCE, tag: "806"}
+            - {name: VMW_VLAN_VXLAN, tag: "807"}
+            - {name: VMW_VLAN_LINK_VIRTUAL_TO_FISIC, tag: "808"}
+            - {name: VMW_VLAN_VCENTER_HA, tag: "809"}
+        
+            
 test-device:
     data:
         type: "lab"
