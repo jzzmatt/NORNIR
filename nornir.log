@@ -1315,3 +1315,773 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: SETUP VLANS (failed)
 2019-04-24 17:31:16,828 -  nornir.core -     INFO -        run() - Running task 'interface_templates' with args {} on 1 hosts
 2019-04-24 17:37:11,716 -  nornir.core -     INFO -        run() - Running task 'interface_templates' with args {} on 1 hosts
 2019-04-24 18:03:48,525 -  nornir.core -     INFO -        run() - Running task 'interface_templates' with args {} on 1 hosts
+2019-04-25 08:34:17,907 -  nornir.core -     INFO -        run() - Running task 'interface_templates' with args {} on 1 hosts
+2019-04-25 09:20:23,941 -  nornir.core -     INFO -        run() - Running task 'interface_templates' with args {} on 1 hosts
+2019-04-25 09:20:23,988 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'SETUP VLANS' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 187, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: vlans.j2
+
+2019-04-25 09:20:23,988 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'interface_templates' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 99, in interface_templates
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: SETUP VLANS (failed)
+
+
+2019-04-25 09:21:29,341 -  nornir.core -     INFO -        run() - Running task 'interface_templates' with args {} on 1 hosts
+2019-04-25 09:22:32,231 -  nornir.core -     INFO -        run() - Running task 'interface_templates' with args {} on 1 hosts
+2019-04-25 09:23:32,293 -  nornir.core -     INFO -        run() - Running task 'interface_templates' with args {} on 1 hosts
+2019-04-25 09:23:32,315 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'interface_templates' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 91, in interface_templates
+    config = services_templates(task)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 134, in services_templates
+    config += r.result
+UnboundLocalError: local variable 'config' referenced before assignment
+
+2019-04-25 09:24:21,101 -  nornir.core -     INFO -        run() - Running task 'interface_templates' with args {} on 1 hosts
+2019-04-25 09:24:21,130 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'interface_templates' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 91, in interface_templates
+    config = services_templates(task)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 134, in services_templates
+    config += r.result
+UnboundLocalError: local variable 'config' referenced before assignment
+
+2019-04-25 09:25:23,804 -  nornir.core -     INFO -        run() - Running task 'interface_templates' with args {} on 1 hosts
+2019-04-25 09:29:50,439 -  nornir.core -     INFO -        run() - Running task 'interface_templates' with args {} on 1 hosts
+2019-04-25 11:51:28,881 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-25 11:51:28,917 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'push_templates' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 85, in push_templates
+    config += "\n\n"
+TypeError: unsupported operand type(s) for +=: 'NoneType' and 'str'
+
+2019-04-25 11:54:15,243 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-25 11:54:15,300 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'SETUP OSPF' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 591, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "./templates/ospf.j2", line 5, in template
+    {% endfor %}
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 199, in parse_for
+    body = self.parse_statements(('name:endfor', 'name:else'))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 165, in parse_statements
+    result = self.subparse(end_tokens)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 213, in parse_if
+    'name:endif'))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 165, in parse_statements
+    result = self.subparse(end_tokens)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 144, in parse_statement
+    self.fail_unknown_tag(token.value, token.lineno)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 97, in fail_unknown_tag
+    return self._fail_ut_eof(name, self._end_token_stack, lineno)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 90, in _fail_ut_eof
+    self.fail(' '.join(message), lineno)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 59, in fail
+    raise exc(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endfor'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+
+2019-04-25 11:54:15,301 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'push_templates' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 88, in push_templates
+    config += routing_templates(task)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 181, in routing_templates
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: SETUP OSPF (failed)
+
+
+2019-04-25 11:55:03,637 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-25 11:56:53,469 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-25 12:02:06,534 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-25 12:02:06,590 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'SETUP OSPF' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 591, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "./templates/ospf.j2", line 7, in template
+    network {{ intf.ip }} {{ intf.subnet | ipaddr('broadcast')} area 0
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 199, in parse_for
+    body = self.parse_statements(('name:endfor', 'name:else'))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 165, in parse_statements
+    result = self.subparse(end_tokens)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 213, in parse_if
+    'name:endif'))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 165, in parse_statements
+    result = self.subparse(end_tokens)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 875, in subparse
+    add_data(self.parse_tuple(with_condexpr=True))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 620, in parse_tuple
+    args.append(parse())
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 432, in parse_expression
+    return self.parse_condexpr()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 437, in parse_condexpr
+    expr1 = self.parse_or()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 450, in parse_or
+    left = self.parse_and()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 459, in parse_and
+    left = self.parse_not()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 470, in parse_not
+    return self.parse_compare()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 474, in parse_compare
+    expr = self.parse_math1()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 496, in parse_math1
+    left = self.parse_concat()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 507, in parse_concat
+    args = [self.parse_math2()]
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 517, in parse_math2
+    left = self.parse_pow()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 528, in parse_pow
+    left = self.parse_unary()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 549, in parse_unary
+    node = self.parse_filter_expr(node)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 685, in parse_filter_expr
+    node = self.parse_filter(node)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 810, in parse_filter
+    args, kwargs, dyn_args, dyn_kwargs = self.parse_call(None)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 793, in parse_call
+    self.stream.expect('rparen')
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/lexer.py", line 388, in expect
+    next(self)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/lexer.py", line 359, in __next__
+    self.current = next(self._iter)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/lexer.py", line 562, in wrap
+    for lineno, token, value in stream:
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/lexer.py", line 683, in tokeniter
+    filename)
+jinja2.exceptions.TemplateSyntaxError: unexpected '}'
+
+2019-04-25 12:02:06,591 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'push_templates' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 88, in push_templates
+    config += routing_templates(task)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 181, in routing_templates
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: SETUP OSPF (failed)
+
+
+2019-04-25 12:02:38,160 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-25 12:02:38,238 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'SETUP OSPF' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 591, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "./templates/ospf.j2", line 7, in template
+    network {{ intf.ip }} {{ intf.subnet | ipaddr('broadcast') }} area 0
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 543, in _generate
+    optimized=self.optimized)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/compiler.py", line 82, in generate
+    generator.visit(node)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/visitor.py", line 38, in visit
+    return f(node, *args, **kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/compiler.py", line 754, in visit_Template
+    self.blockvisit(node.body, frame)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/compiler.py", line 378, in blockvisit
+    self.visit(node, frame)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/visitor.py", line 38, in visit
+    return f(node, *args, **kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/compiler.py", line 1122, in visit_For
+    self.blockvisit(node.body, loop_frame)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/compiler.py", line 378, in blockvisit
+    self.visit(node, frame)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/visitor.py", line 38, in visit
+    return f(node, *args, **kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/compiler.py", line 1160, in visit_If
+    self.blockvisit(node.body, if_frame)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/compiler.py", line 378, in blockvisit
+    self.visit(node, frame)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/visitor.py", line 38, in visit
+    return f(node, *args, **kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/compiler.py", line 1358, in visit_Output
+    self.visit(argument, frame)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/visitor.py", line 38, in visit
+    return f(node, *args, **kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/compiler.py", line 70, in new_func
+    return f(self, node, frame, **kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/compiler.py", line 1578, in visit_Filter
+    self.fail('no filter named %r' % node.name, node.lineno)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/compiler.py", line 315, in fail
+    raise TemplateAssertionError(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateAssertionError: no filter named 'ipaddr'
+
+2019-04-25 12:02:38,238 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'push_templates' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 88, in push_templates
+    config += routing_templates(task)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 181, in routing_templates
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: SETUP OSPF (failed)
+
+
+2019-04-25 12:12:17,615 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-25 14:41:51,206 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-25 14:41:51,287 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'SETUP MULTICAST' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 18, in render_from_file
+    return t.render(**kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "./templates/multicast.j2", line 11, in top-level template code
+    ip address {{ host.multicast.anycast.ip }} {{ host.multicast.anycast.subnet }}
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'name'
+
+2019-04-25 14:41:51,288 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'push_templates' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 88, in push_templates
+    config += routing_templates(task)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 191, in routing_templates
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: SETUP MULTICAST (failed)
+
+
+2019-04-25 14:44:05,259 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-25 14:44:05,329 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'SETUP MULTICAST' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 18, in render_from_file
+    return t.render(**kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "./templates/multicast.j2", line 11, in top-level template code
+    ip address {{ host.multicast.anycast.ip }} {{ host.multicast.anycast.subnet }}
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'name'
+
+2019-04-25 14:44:05,330 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'push_templates' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 88, in push_templates
+    config += routing_templates(task)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 191, in routing_templates
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: SETUP MULTICAST (failed)
+
+
+2019-04-25 14:44:51,600 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-25 14:44:51,675 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'SETUP MULTICAST' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 18, in render_from_file
+    return t.render(**kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "./templates/multicast.j2", line 17, in top-level template code
+    ip pim rp-candidate {{ host.multicast.anycast.name }} priority 255 bidir
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'name'
+
+2019-04-25 14:44:51,676 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'push_templates' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 88, in push_templates
+    config += routing_templates(task)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 191, in routing_templates
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: SETUP MULTICAST (failed)
+
+
+2019-04-25 14:45:30,438 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-25 14:45:30,518 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'SETUP MULTICAST' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 18, in render_from_file
+    return t.render(**kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "./templates/multicast.j2", line 19, in top-level template code
+    {% if host[device_name] == "CoreSPINEcuca01" %}
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 411, in getitem
+    return obj[argument]
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/inventory.py", line 150, in __getitem__
+    return self.data[item]
+jinja2.exceptions.UndefinedError: 'device_name' is undefined
+
+2019-04-25 14:45:30,518 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'push_templates' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 88, in push_templates
+    config += routing_templates(task)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 191, in routing_templates
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: SETUP MULTICAST (failed)
+
+
+2019-04-25 14:45:59,115 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-25 14:45:59,197 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'SETUP MULTICAST' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 18, in render_from_file
+    return t.render(**kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "./templates/multicast.j2", line 27, in top-level template code
+    ip msdp originator-id {{ srcintf|join() }}
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'peer_victoria'
+
+2019-04-25 14:45:59,197 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'push_templates' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 88, in push_templates
+    config += routing_templates(task)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 191, in routing_templates
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: SETUP MULTICAST (failed)
+
+
+2019-04-25 14:46:26,741 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-25 14:48:01,944 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-25 14:51:42,589 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-25 14:59:04,734 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-25 16:23:21,147 -  nornir.core -     INFO -        run() - Running task 'bgp_templates' with args {} on 1 hosts
+2019-04-25 16:23:41,105 -  nornir.core -     INFO -        run() - Running task 'bgp_templates' with args {} on 1 hosts
+2019-04-25 16:23:41,135 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'SETUP BGP' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 591, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "./templates/bgp.j2", line 8, in template
+    {% endfor %}
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 199, in parse_for
+    body = self.parse_statements(('name:endfor', 'name:else'))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 165, in parse_statements
+    result = self.subparse(end_tokens)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 213, in parse_if
+    'name:endif'))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 170, in parse_statements
+    self.fail_eof(end_tokens)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 104, in fail_eof
+    return self._fail_ut_eof(None, stack, lineno)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 90, in _fail_ut_eof
+    self.fail(' '.join(message), lineno)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 59, in fail
+    raise exc(msg, lineno, self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+
+2019-04-25 16:23:41,136 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'bgp_templates' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 206, in bgp_templates
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: SETUP BGP (failed)
+
+
+2019-04-25 16:24:24,722 -  nornir.core -     INFO -        run() - Running task 'bgp_templates' with args {} on 1 hosts
+2019-04-25 16:24:24,744 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'SETUP BGP' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 18, in render_from_file
+    return t.render(**kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "./templates/bgp.j2", line 1, in top-level template code
+    {% for host in groups['distribution-switch'] %}
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 411, in getitem
+    return obj[argument]
+jinja2.exceptions.UndefinedError: 'groups' is undefined
+
+2019-04-25 16:24:24,745 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'bgp_templates' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 206, in bgp_templates
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: SETUP BGP (failed)
+
+
+2019-04-25 16:24:39,403 -  nornir.core -     INFO -        run() - Running task 'bgp_templates' with args {} on 1 hosts
+2019-04-25 16:24:39,428 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'SETUP BGP' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 18, in render_from_file
+    return t.render(**kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "./templates/bgp.j2", line 1, in top-level template code
+    {% for host in group['distribution-switch'] %}
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 411, in getitem
+    return obj[argument]
+jinja2.exceptions.UndefinedError: 'group' is undefined
+
+2019-04-25 16:24:39,429 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'bgp_templates' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 206, in bgp_templates
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: SETUP BGP (failed)
+
+
+2019-04-25 16:25:09,579 -  nornir.core -     INFO -        run() - Running task 'bgp_templates' with args {} on 1 hosts
+2019-04-25 16:25:09,601 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'SETUP BGP' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 18, in render_from_file
+    return t.render(**kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "./templates/bgp.j2", line 1, in top-level template code
+    {% for host in inventory.groups['distribution-switch'] %}
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'inventory' is undefined
+
+2019-04-25 16:25:09,602 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'bgp_templates' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 206, in bgp_templates
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: SETUP BGP (failed)
+
+
+2019-04-25 16:25:38,460 -  nornir.core -     INFO -        run() - Running task 'bgp_templates' with args {} on 1 hosts
+2019-04-25 16:25:38,483 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'SETUP BGP' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 18, in render_from_file
+    return t.render(**kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "./templates/bgp.j2", line 1, in top-level template code
+    {% for host in groups['distribution-switch'] %}
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 411, in getitem
+    return obj[argument]
+jinja2.exceptions.UndefinedError: 'groups' is undefined
+
+2019-04-25 16:25:38,483 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'bgp_templates' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 206, in bgp_templates
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: SETUP BGP (failed)
+
+
+2019-04-25 18:04:33,193 -  nornir.core -     INFO -        run() - Running task 'bgp_templates' with args {} on 1 hosts
+2019-04-25 18:04:33,230 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'SETUP BGP' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 18, in render_from_file
+    return t.render(**kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "./templates/bgp.j2", line 13, in top-level template code
+    neighbor {{ neig['peer_ip'] }} update-source {{ intfname }}
+jinja2.exceptions.UndefinedError: 'intfname' is undefined
+
+2019-04-25 18:04:33,231 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'bgp_templates' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 229, in bgp_templates
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: SETUP BGP (failed)
+
+
+2019-04-25 18:07:31,881 -  nornir.core -     INFO -        run() - Running task 'bgp_templates' with args {} on 1 hosts
+2019-04-25 18:07:31,905 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'SETUP BGP' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 17, in render_from_file
+    t = env.get_template(template)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 591, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "./templates/bgp.j2", line 8, in template
+    {% set srcintf host.interfaces | selectattr('name', 'equalto', 'Loopback0') | map(attribute='name') | list %}
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 185, in parse_set
+    drop_needle=True)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/parser.py", line 164, in parse_statements
+    self.stream.expect('block_end')
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/lexer.py", line 384, in expect
+    self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: expected token 'end of statement block', got 'host'
+
+2019-04-25 18:07:31,906 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'bgp_templates' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 229, in bgp_templates
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: SETUP BGP (failed)
+
+
+2019-04-25 18:10:08,607 -  nornir.core -     INFO -        run() - Running task 'bgp_templates' with args {} on 1 hosts
+2019-04-25 18:13:18,604 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-25 18:14:45,929 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-25 18:17:28,057 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts

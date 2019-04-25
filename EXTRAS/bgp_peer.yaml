@@ -1,0 +1,2 @@
+- {peer_asn: '6020', peer_ip: 172.16.10.9, peer_name: dcgca.esg.border}
+- {peer_asn: '6020', peer_ip: 172.16.10.1, peer_name: dcgca.ulr.core}

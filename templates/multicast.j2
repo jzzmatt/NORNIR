@@ -1,0 +1,31 @@
+{% for intf in host.interfaces %}
+{% if intf.name.startswith('Loopback') or intf['description'].startswith('Link Downstream') or intf['description'].startswith('Link Upstream') %}
+{% if intf.tag is defined %}
+interface vlan {{ intf.tag }}
+{% else %}
+interface {{ intf.name }}
+{% endif %}
+  ip pim sparse-mode
+{% endif %}
+{% endfor %}
+!
+{% if host.multicast.anycast is defined %}
+interface {{ host.multicast.anycast.intf_name }}
+  description {{ host.multicast.anycast.description }}
+  ip address {{ host.multicast.anycast.ip }} {{ host.multicast.anycast.subnet }}
+  ip pim sparse-mode
+{% endif %}
+!
+ip pim bidir-enable
+ip pim bsr-candidate {{ host.multicast.anycast.intf_name }} 0
+ip pim rp-candidate {{ host.multicast.anycast.intf_name }} priority 255 bidir
+!
+{% if host['device_name'] == "CoreSPINEcuca01" %}
+{% set remote_peer = host.multicast.peer_victoria %}
+{% elif host['device_name'] == "CoreSPINEvictoria01" %}
+{% set remote_peer = host.multicast.peer_cuca %}
+{% endif %}
+{% set srcintf=host.interfaces | selectattr('name', 'equalto', 'Loopback1') | map(attribute='name') | list %}
+ip msdp peer {{ remote_peer }} connect-source {{ srcintf|join() }}
+ip msdp cache-sa-state
+ip msdp originator-id {{ srcintf|join() }}

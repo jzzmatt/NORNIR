@@ -1,10 +1,11 @@
 ---
 CSR1000v-lab:
   data:
+    asn: null
     device_name: CSR1000v-lab
     interfaces:
     - {description: Management, ip: 10.30.107.246, mgt_only: true, name: GigabitEthernet1,
-      subnet: 255.255.255.0}
+      rev_subnet: 0.0.0.255, subnet: 255.255.255.0}
     model: CSRV1000v
     role: test-device
     site: VICTORIA
@@ -15,6 +16,7 @@ CSR1000v-lab:
   username: admin
 CoreFABRcuca01:
   data:
+    asn: null
     device_name: CoreFABRcuca01
     interfaces:
     - description: Link Upstream 01 SPINE CUCA
@@ -22,10 +24,11 @@ CoreFABRcuca01:
       mgt_only: false
       name: GigabitEthernet5/3
       peer_connected: {peer: CoreSPINEcuca01, peer_intf: GigabitEthernet3/48}
+      rev_subnet: 0.0.0.1
       status: Connected
       subnet: 255.255.255.254
     - {description: RID Cuca Distribution, ip: 10.104.127.2, mgt_only: false, name: Loopback0,
-      subnet: 255.255.255.255}
+      rev_subnet: 0.0.0.0, subnet: 255.255.255.255}
     model: C4500
     role: distribution-switch
     site: CUCA
@@ -36,6 +39,7 @@ CoreFABRcuca01:
   username: admin
 CoreSPINEcuca01:
   data:
+    asn: '6500'
     device_name: CoreSPINEcuca01
     interfaces:
     - description: Link Downstream 01 FABR CUCA
@@ -43,36 +47,38 @@ CoreSPINEcuca01:
       mgt_only: false
       name: GigabitEthernet3/48
       peer_connected: {peer: CoreFABRcuca01, peer_intf: GigabitEthernet5/3}
+      rev_subnet: 0.0.0.1
       status: Connected
       subnet: 255.255.255.254
     - {description: RID Cuca Spine, ip: 10.104.127.1, mgt_only: false, name: Loopback0,
-      subnet: 255.255.255.255}
+      rev_subnet: 0.0.0.0, subnet: 255.255.255.255}
     - {description: RendezVous MultiCast, ip: 10.104.127.254, mgt_only: false, name: Loopback1,
-      subnet: 255.255.255.255}
-    - {description: VMW_PROV, ip: 10.104.0.254, mgt_only: false, name: VL801, subnet: 255.255.255.0,
-      tag: '801'}
-    - {description: VL_HP_ILO, ip: 10.104.1.254, mgt_only: false, name: VL802, subnet: 255.255.255.0,
-      tag: '802'}
-    - {description: NSXMGT, ip: 10.104.2.254, mgt_only: false, name: VL803, subnet: 255.255.255.0,
-      tag: '803'}
-    - {description: VMW_STORAGE, ip: 10.104.3.30, mgt_only: false, name: VL804, subnet: 255.255.255.224,
-      tag: '804'}
-    - {description: VMW_VMOTION, ip: 10.104.3.62, mgt_only: false, name: VL805, subnet: 255.255.255.224,
-      tag: '805'}
+      rev_subnet: 0.0.0.0, subnet: 255.255.255.255}
+    - {description: VMW_PROV, ip: 10.104.0.254, mgt_only: false, name: VL801, rev_subnet: 0.0.0.255,
+      subnet: 255.255.255.0, tag: '801'}
+    - {description: VL_HP_ILO, ip: 10.104.1.254, mgt_only: false, name: VL802, rev_subnet: 0.0.0.255,
+      subnet: 255.255.255.0, tag: '802'}
+    - {description: NSXMGT, ip: 10.104.2.254, mgt_only: false, name: VL803, rev_subnet: 0.0.0.255,
+      subnet: 255.255.255.0, tag: '803'}
+    - {description: VMW_STORAGE, ip: 10.104.3.30, mgt_only: false, name: VL804, rev_subnet: 0.0.0.31,
+      subnet: 255.255.255.224, tag: '804'}
+    - {description: VMW_VMOTION, ip: 10.104.3.62, mgt_only: false, name: VL805, rev_subnet: 0.0.0.31,
+      subnet: 255.255.255.224, tag: '805'}
     - {description: VMW_FAULT_TOLERANCE, ip: 10.104.3.94, mgt_only: false, name: VL806,
-      subnet: 255.255.255.224, tag: '806'}
+      rev_subnet: 0.0.0.31, subnet: 255.255.255.224, tag: '806'}
     - {description: VMW_VXLAN_VTEP, ip: 10.104.3.126, mgt_only: false, name: VL807,
-      subnet: 255.255.255.224, tag: '807'}
+      rev_subnet: 0.0.0.31, subnet: 255.255.255.224, tag: '807'}
     - description: Link Downstream 01 ESG CUCA
       ip: 172.16.10.10
       mgt_only: false
       name: VL808
       peer_connected: {peer: dcgca.esg.border, peer_intf: vif.uplink2cuca}
+      rev_subnet: 0.0.0.3
       status: Connected
       subnet: 255.255.255.252
       tag: '808'
     - {description: VMW_VCENTER_HA, ip: 10.104.3.129, mgt_only: false, name: VL809,
-      subnet: 255.255.255.248, tag: '809'}
+      rev_subnet: 0.0.0.7, subnet: 255.255.255.248, tag: '809'}
     model: C6500
     role: core-switch
     site: CUCA
@@ -83,12 +89,13 @@ CoreSPINEcuca01:
   username: admin
 CoreSPINEvictoria01:
   data:
+    asn: '6500'
     device_name: CoreSPINEvictoria01
     interfaces:
     - {description: RID Victoria Spine, ip: 10.104.63.1, mgt_only: false, name: Loopback0,
-      subnet: 255.255.255.255}
+      rev_subnet: 0.0.0.0, subnet: 255.255.255.255}
     - {description: RendezVous MultiCast Victoria, ip: 10.104.63.254, mgt_only: false,
-      name: Loopback1, subnet: 255.255.255.255}
+      name: Loopback1, rev_subnet: 0.0.0.0, subnet: 255.255.255.255}
     model: C6500
     role: core-switch
     site: VICTORIA
@@ -99,13 +106,15 @@ CoreSPINEvictoria01:
   username: admin
 dcgca.dhcp.server:
   data:
+    asn: null
     device_name: dcgca.dhcp.server
     interfaces:
     - {description: '', ip: 10.110.1.253, mgt_only: false, name: vif.gca.application,
-      subnet: 255.255.255.0}
+      rev_subnet: 0.0.0.255, subnet: 255.255.255.0}
     - {description: '', ip: 10.110.7.253, mgt_only: false, name: vif.gca.desktop,
-      subnet: 255.255.252.0}
-    - {description: '', ip: 10.110.3.253, mgt_only: false, name: vif.gca.stage, subnet: 255.255.255.128}
+      rev_subnet: 0.0.3.255, subnet: 255.255.252.0}
+    - {description: '', ip: 10.110.3.253, mgt_only: false, name: vif.gca.stage, rev_subnet: 0.0.0.127,
+      subnet: 255.255.255.128}
     model: NSX-ESG
     role: edge-security-gateway
     site: CUCA
@@ -116,6 +125,7 @@ dcgca.dhcp.server:
   username: admin
 dcgca.esg.border:
   data:
+    asn: '6020'
     device_name: dcgca.esg.border
     interfaces:
     - description: ''
@@ -123,14 +133,17 @@ dcgca.esg.border:
       mgt_only: false
       name: vif.cuc.core2border
       peer_connected: {peer: dcgca.ulr.core, peer_intf: Internal_Uplink01}
+      rev_subnet: 0.0.0.7
       status: Connected
       subnet: 255.255.255.248
-    - {description: '', ip: 172.16.10.29, mgt_only: false, name: vif.internet, subnet: 255.255.255.252}
+    - {description: '', ip: 172.16.10.29, mgt_only: false, name: vif.internet, rev_subnet: 0.0.0.3,
+      subnet: 255.255.255.252}
     - description: ''
       ip: 172.16.10.9
       mgt_only: false
       name: vif.uplink2cuca
       peer_connected: {peer: CoreSPINEcuca01, peer_intf: VL808}
+      rev_subnet: 0.0.0.3
       status: Connected
       subnet: 255.255.255.252
     model: NSX-ESG
@@ -143,6 +156,7 @@ dcgca.esg.border:
   username: admin
 dcgca.ulr.core:
   data:
+    asn: '6020'
     device_name: dcgca.ulr.core
     interfaces:
     - description: Uplink to ESG
@@ -150,24 +164,25 @@ dcgca.ulr.core:
       mgt_only: false
       name: Internal_Uplink01
       peer_connected: {peer: dcgca.esg.border, peer_intf: vif.cuc.core2border}
+      rev_subnet: 0.0.0.7
       status: Connected
       subnet: 255.255.255.248
     - {description: Universal Logical Switch, ip: 10.110.1.254, mgt_only: false, name: vif.gca.application,
-      subnet: 255.255.255.0}
+      rev_subnet: 0.0.0.255, subnet: 255.255.255.0}
     - {description: Universal Logical Switch, ip: 10.110.2.30, mgt_only: false, name: vif.gca.database,
-      subnet: 255.255.255.224}
+      rev_subnet: 0.0.0.31, subnet: 255.255.255.224}
     - {description: Universal Logical Switch, ip: 10.110.7.254, mgt_only: false, name: vif.gca.desktop,
-      subnet: 255.255.252.0}
+      rev_subnet: 0.0.3.255, subnet: 255.255.252.0}
     - {description: Universal Logical Switch, ip: 10.110.2.62, mgt_only: false, name: vif.gca.fileshare,
-      subnet: 255.255.255.224}
+      rev_subnet: 0.0.0.31, subnet: 255.255.255.224}
     - {description: Universal Logical Switch, ip: 10.110.2.158, mgt_only: false, name: vif.gca.monitoring,
-      subnet: 255.255.255.224}
+      rev_subnet: 0.0.0.31, subnet: 255.255.255.224}
     - {description: Universal Logical Switch, ip: 10.110.2.126, mgt_only: false, name: vif.gca.security,
-      subnet: 255.255.255.192}
+      rev_subnet: 0.0.0.63, subnet: 255.255.255.192}
     - {description: Universal Logical Switch, ip: 10.110.0.254, mgt_only: false, name: vif.gca.servers,
-      subnet: 255.255.255.0}
+      rev_subnet: 0.0.0.255, subnet: 255.255.255.0}
     - {description: Universal Logical Switch, ip: 10.110.3.254, mgt_only: false, name: vif.gca.stage,
-      subnet: 255.255.255.128}
+      rev_subnet: 0.0.0.127, subnet: 255.255.255.128}
     model: NSX-UDLR
     role: universal-dlr
     site: CUCA
@@ -178,9 +193,11 @@ dcgca.ulr.core:
   username: admin
 nsx-controller01:
   data:
+    asn: null
     device_name: nsx-controller01
     interfaces:
-    - {description: '', ip: 10.104.2.31, mgt_only: false, name: e0, subnet: 255.255.255.0}
+    - {description: '', ip: 10.104.2.31, mgt_only: false, name: e0, rev_subnet: 0.0.0.255,
+      subnet: 255.255.255.0}
     model: NSX-Controller
     role: nsx-controller
     site: CUCA
@@ -191,9 +208,11 @@ nsx-controller01:
   username: admin
 nsx-controller02:
   data:
+    asn: null
     device_name: nsx-controller02
     interfaces:
-    - {description: '', ip: 10.104.2.32, mgt_only: false, name: e0, subnet: 255.255.255.0}
+    - {description: '', ip: 10.104.2.32, mgt_only: false, name: e0, rev_subnet: 0.0.0.255,
+      subnet: 255.255.255.0}
     model: NSX-Controller
     role: nsx-controller
     site: CUCA
@@ -204,9 +223,11 @@ nsx-controller02:
   username: admin
 nsx-controller03:
   data:
+    asn: null
     device_name: nsx-controller03
     interfaces:
-    - {description: '', ip: 10.104.2.33, mgt_only: false, name: e0, subnet: 255.255.255.0}
+    - {description: '', ip: 10.104.2.33, mgt_only: false, name: e0, rev_subnet: 0.0.0.255,
+      subnet: 255.255.255.0}
     model: NSX-Controller
     role: nsx-controller
     site: CUCA
@@ -217,9 +238,11 @@ nsx-controller03:
   username: admin
 nsxmgt01:
   data:
+    asn: null
     device_name: nsxmgt01
     interfaces:
-    - {description: Management, ip: 10.104.2.27, mgt_only: true, name: e0, subnet: 255.255.255.0}
+    - {description: Management, ip: 10.104.2.27, mgt_only: true, name: e0, rev_subnet: 0.0.0.255,
+      subnet: 255.255.255.0}
     model: NSX-Manager
     role: nsx-management
     site: CUCA

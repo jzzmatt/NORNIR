@@ -42,12 +42,12 @@ global:
             consolevel: 7
 
 
+
 distribution-switch:
     data:
         type: "Switch"
 core-switch:
     data:
-        asn: 6500
         vlans:
             - {name: VMW_VLAN_PROV2, tag: "801"}
             - {name: VMW_VLAN_ILO_NEW, tag: "802"}
@@ -60,6 +60,16 @@ core-switch:
             - {name: VMW_VLAN_VCENTER_HA, tag: "809"}
         vtp:
             mode: "transparent"
+
+        multicast:
+            anycast:
+                intf_name: "Loopback 10"
+                description: "ANYCAST RENDEZ VOUS"
+                ip: 12.12.12.12
+                subnet: 255.255.255.255
+            peer_victoria: 10.104.63.254
+            peer_cuca: 10.104.127.254
+            
         
             
 test-device:

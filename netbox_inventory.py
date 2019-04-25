@@ -48,6 +48,7 @@ class Nbx_dev(object):
         self.site = site
         self.data = {}
         self.group = []
+        self.asn = None
 
     @property
     def getos(self):
@@ -191,6 +192,7 @@ def parsed_ipv4(ip):
     ipv4 = netaddr.IPNetwork(ip['address'])
     nbx_ip_data['ip'] = f"{ipv4.ip}"
     nbx_ip_data['subnet'] = f"{ipv4.netmask}"
+    nbx_ip_data['rev_subnet'] = f"{ipv4.hostmask}"
     nbx_ip_data['name'] = ip['interface']['name']
     return nbx_ip_data
 def mix_intftoip(dev):
@@ -229,6 +231,7 @@ def netboxtodevlist():
             device['primary_ip4']['address'],
             device['site']['name'],
         )
+        nbx_obj.asn = device['custom_fields']['device_asn']
         nbx_obj.setgroup(device['device_role']['slug'])
         nbx_obj.setgroup('global')
         nbx_obj_lst.append(nbx_obj)
@@ -252,6 +255,7 @@ def export_to(device_lst):
         host_data['data']['device_name'] = dev.name
         host_data['data']['role'] = dev.device_role
         host_data['data']['model'] = dev.model
+        host_data['data']['asn'] = dev.asn
         host_data['data']['interfaces'] = dev.data['intf']
         inventory[host_data['data']['device_name']] = host_data
     return inventory
@@ -327,7 +331,8 @@ def main():
 
 if __name__ == '__main__':
     #for device in netboxtodevlist():
-    #    if device.name == "CoreSPINEcuca01":
+    #    if device.name == "dcgca.esg.border":
+    #        print(device.asn)
             #print(device.get_parsed_intf())
             #print(device.get_parsed_ipv4())
      #       update_data_device(device)

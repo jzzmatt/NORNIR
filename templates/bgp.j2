@@ -1,0 +1,14 @@
+router bgp {{ host.asn }}
+{% for intf in host.interfaces %}
+{% if intf['description'].startswith('RID') %}
+  bgp router-id {{ intf.ip }}
+{% endif %}
+{% endfor %}
+  bgp log-neighbor-changes
+{% set srcintf=host.interfaces | selectattr('name', 'equalto', 'Loopback0') | map(attribute='name') | list %}
+{% for neig in host['bgp_peers'] %}
+  neighbor {{ neig['peer_ip'] }} remote-as {{ neig['peer_asn'] }}
+  neighbor {{ neig['peer_ip'] }} ebgp-multihop 2
+  neighbor {{ neig['peer_ip'] }} soft-reconfiguration inbound
+  neighbor {{ neig['peer_ip'] }} update-source {{ srcintf|join() }}
+{% endfor %}

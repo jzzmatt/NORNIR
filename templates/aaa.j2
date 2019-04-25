@@ -7,6 +7,8 @@ line vty 0 4
 {% for srv in host.tacacs.ip %}
 tacacs-server host {{ srv }} timeout {{ host.tacacs.timeout }}
 {% endfor %}
+{% set srcintf=host.interfaces | selectattr('name', 'equalto', 'Loopback0') | map(attribute='name') | list %}
+ip tacacs source-interface {{ srcintf|join() }}
 tacacs-server key {{ host.tacacs.key }}
 tacacs-server directed-request
 aaa authentication enable default group tacacs+ enable

@@ -1,0 +1,9 @@
+router ospf 1
+{% for intf in host.interfaces %}
+{% if intf['description'].startswith('RID') %}
+  router-id {{ intf['ip'] }}
+{% endif %}
+{% if intf['description'].startswith('Link Downstream') or intf['description'].startswith('Link Upstream') %}
+  network {{ intf.ip }} {{ intf.rev_subnet }} area 0
+{% endif %}
+{% endfor %}

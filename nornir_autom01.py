@@ -15,6 +15,7 @@ dir_fact = "./FACTS"
 dir_config = "./CONFIG"
 dir_backup = "./BACKUP"
 dir_template = "./templates"
+extra_vars = "./EXTRAS"
 
 def trash():
     print(nr.inventory.hosts)
@@ -43,7 +44,6 @@ def get_host_fact(task):
     task.host['facts'] = get_fact.result
     #Keep fact on FACT FOLDER
     savetodir(convertoyaml(get_fact.result), dir_fact, task.host)
-
 def get_backup(task):
     show_command_lst = [
         'terminal length 0',
@@ -61,7 +61,7 @@ def convertoyaml(file):
     converted_f = yaml.dump(file)
     return converted_f
 def deploy_directory():
-    directory_lst = [dir_fact, dir_config, dir_backup, dir_template]
+    directory_lst = [dir_fact, dir_config, dir_backup, dir_template, extra_vars]
     for directory in directory_lst:
         if not os.path.exists(directory):
             print(f'create directory {directory}')
@@ -76,10 +76,23 @@ def savetodir(file_name, dir_name, hostname):
         offset = '_save.backup'
     if dir_name == dir_config:
         offset = '_new.cfg'
+    if dir_name == extra_vars:
+        offset = '.yaml'
 
     with open(f'{hostname}{offset}', 'w') as f:
         f.write(file_name)
     print(f'Have successfully save {file_name} to {dir_name}')
+def push_templates(task):
+    config = interface_templates(task)
+    config += "\n\n"
+    config += services_templates(task)
+    config += "\n\n"
+    config += routing_templates(task)
+    config += "\n\n"
+    config += bgp_templates(task)
+    config += "\n\n"
+
+    savetodir(config, dir_config, task.host)
 def interface_templates(task):
     #Load FACT file into Host Attributes
     fact_file = task.run(
@@ -87,9 +100,6 @@ def interface_templates(task):
         file=f'{dir_fact}/{task.host}_fact.yml'
     )
     task.host['facts'] = fact_file.result
-
-    config = services_templates(task)
-    config += "\n\n"
 
     #SETUP VLANS
     r = task.run(
@@ -108,7 +118,7 @@ def interface_templates(task):
         template="stp.j2",
         path="./templates/"
     )
-    config = r.result
+    config += r.result
     config += "\n\n"
 
     # SETUP INTERFACES
@@ -120,9 +130,7 @@ def interface_templates(task):
     )
     config += r.result
     config += "\n\n"
-    #Save the Compile Config to FACT DIR
-    savetodir(config, dir_config, task.host)
-
+    return config
 def services_templates(task):
     #SETUP TIME & NTP
     r = task.run(
@@ -164,18 +172,71 @@ def services_templates(task):
     config += r.result
     config += "\n\n"
 
+    return config
+def get_bgp_peer():
+    host_bgp_peer = []
+    peer_bgp_list = []
+
+    for host in nr.inventory.hosts.values():
+        if host['asn'] != None and host['role'] != 'core-switch':
+            host_bgp_peer.append(host)
+    print(host_bgp_peer)
+    for dev in host_bgp_peer:
+        peer_bgp_dict = {}
+        peer_bgp_dict['peer_name'] = dev.name
+        peer_bgp_dict['peer_ip'] = dev.hostname
+        peer_bgp_dict['peer_asn'] = dev['asn']
+        peer_bgp_list.append(peer_bgp_dict)
+    #print(bgp_neig)
+    savetodir(convertoyaml(peer_bgp_list), extra_vars, 'bgp_peer')
+def routing_templates(task):
+    # SETUP OSPF
+    r = task.run(
+        task=text.template_file,
+        name="SETUP OSPF",
+        template="ospf.j2",
+        path="./templates/"
+    )
+    config = r.result
+    config += "\n\n"
+
+    # SETUP MULTICAST
+    r = task.run(
+        task=text.template_file,
+        name="SETUP MULTICAST",
+        template="multicast.j2",
+        path="./templates/"
+    )
+    config += r.result
+    config += "\n\n"
+
+    return config
+def bgp_templates(task):
+    # Load BGP file into Host Attributes
+    bgp_file = task.run(
+        task=load_yaml,
+        file=f'{extra_vars}/bgp_peer.yaml'
+    )
+    task.host['bgp_peers'] = bgp_file.result
+
+    r = task.run(
+        task=text.template_file,
+        name="SETUP BGP",
+        template="bgp.j2",
+        path="./templates/"
+    )
+    config = r.result
+    config += "\n\n"
 
     return config
 
-def routing_templates(task):
-    pass
 def main():
     print_title("Deploy INFRA DIRECTORY")
     deploy_directory()
 
     print_title("Get Host Fact Using NAPALM")
     result = nr.filter(site="CUCA", role="core-switch").run(task=get_host_fact)
-    #print_result(result)
+    print_result(result)
 
     print_title("Perform a Backup before Changes")
     nr.filter(site="CUCA", role="core-switch").run(task=get_backup)
@@ -186,12 +247,13 @@ def main():
 
 
 if __name__ == '__main__':
-    print_title("Send Template to HOST")
-    output = nr.filter(site="CUCA", role="core-switch").run(task=interface_templates)
+    print_title("PUSH TEMPLATE to HOST")
+    output = nr.filter(site="CUCA", role="core-switch").run(task=push_templates)
+    #output = nr.filter(site="CUCA", role="core-switch").run(task=bgp_templates)
     print_result(output)
-    #print(nr.inventory.hosts['CoreSPINEcuca01']['interfaces'])
-    #main()
+    #print(nr.inventory.hosts['CoreSPINEcuca01']['asn'])
     #print(nr.inventory.hosts['CoreSPINEcuca01']['vlans'])
+    #print(get_bgp_peer())
 
 
 
