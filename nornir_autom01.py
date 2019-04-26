@@ -44,6 +44,7 @@ def get_host_fact(task):
     task.host['facts'] = get_fact.result
     #Keep fact on FACT FOLDER
     savetodir(convertoyaml(get_fact.result), dir_fact, task.host)
+
 def get_backup(task):
     show_command_lst = [
         'terminal length 0',
@@ -57,9 +58,11 @@ def get_backup(task):
 
     #result = task.run(task=networking.netmiko_send_command(sh_command))
     savetodir(output, dir_backup, task.host)
+
 def convertoyaml(file):
     converted_f = yaml.dump(file)
     return converted_f
+
 def deploy_directory():
     directory_lst = [dir_fact, dir_config, dir_backup, dir_template, extra_vars]
     for directory in directory_lst:
@@ -68,6 +71,7 @@ def deploy_directory():
             os.makedirs(directory)
         else:
             print(f'{directory} already exist!!!')
+
 def savetodir(file_name, dir_name, hostname):
     os.chdir(dir_name)
     if dir_name == dir_fact:
@@ -82,6 +86,7 @@ def savetodir(file_name, dir_name, hostname):
     with open(f'{hostname}{offset}', 'w') as f:
         f.write(file_name)
     print(f'Have successfully save {file_name} to {dir_name}')
+
 def push_templates(task):
     config = interface_templates(task)
     config += "\n\n"
@@ -92,6 +97,7 @@ def push_templates(task):
     config += bgp_templates(task)
     config += "\n\n"
     savetodir(config, dir_config, task.host)
+
 def interface_templates(task):
     #Load FACT file into Host Attributes
     fact_file = task.run(
@@ -136,6 +142,7 @@ def interface_templates(task):
     config += r.result
     config += "\n\n"
     return config
+
 def services_templates(task):
     #SETUP TIME & NTP
     r = task.run(
@@ -178,6 +185,7 @@ def services_templates(task):
     config += "\n\n"
 
     return config
+
 def get_bgp_peer():
     host_bgp_peer = []
     peer_bgp_list = []
@@ -194,6 +202,7 @@ def get_bgp_peer():
         peer_bgp_list.append(peer_bgp_dict)
     #print(bgp_neig)
     savetodir(convertoyaml(peer_bgp_list), extra_vars, 'bgp_peer')
+
 def routing_templates(task):
     # SETUP OSPF
     r = task.run(
@@ -216,6 +225,7 @@ def routing_templates(task):
     config += "\n\n"
 
     return config
+
 def bgp_templates(task):
     # Load BGP file into Host Attributes
     bgp_file = task.run(
