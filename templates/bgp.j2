@@ -6,9 +6,12 @@ router bgp {{ host.asn }}
 {% endfor %}
   bgp log-neighbor-changes
 {% set srcintf=host.interfaces | selectattr('name', 'equalto', 'Loopback0') | map(attribute='name') | list %}
+  neighbor leafs peer-group
+  neighbor leafs ebgp-multihop 2
+  neighbor leafs soft-reconfiguration inbound
+  neighbor leafs default-originate
+  neighbor leafs update-source {{ srcintf|join() }}
 {% for neig in host['bgp_peers'] %}
   neighbor {{ neig['peer_ip'] }} remote-as {{ neig['peer_asn'] }}
-  neighbor {{ neig['peer_ip'] }} ebgp-multihop 2
-  neighbor {{ neig['peer_ip'] }} soft-reconfiguration inbound
-  neighbor {{ neig['peer_ip'] }} update-source {{ srcintf|join() }}
+  neighbor {{ neig['peer_ip'] }} peer-group leafs
 {% endfor %}

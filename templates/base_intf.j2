@@ -8,4 +8,13 @@ interface {{ intf.name }}
   ip address {{ intf.ip }} {{ intf.subnet }}
 !
 {% endfor %}
-
+!
+{% set vlan_lst = host.vlans | map(attribute="tag") | list %}
+interface range {{ host.trunk.trunk.range }}
+  description {{ host.trunk.trunk.description }}
+  switchport trunk encapsulation {{ host.trunk.trunk.mode }}
+  switchport mode trunk
+  switchport nonegotiate
+  switchport trunk allowed vlan {{ vlan_lst | join(',') }}
+  mtu {{ host.trunk.trunk.mtu }}
+!

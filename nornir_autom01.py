@@ -91,7 +91,6 @@ def push_templates(task):
     config += "\n\n"
     config += bgp_templates(task)
     config += "\n\n"
-
     savetodir(config, dir_config, task.host)
 def interface_templates(task):
     #Load FACT file into Host Attributes
@@ -100,6 +99,12 @@ def interface_templates(task):
         file=f'{dir_fact}/{task.host}_fact.yml'
     )
     task.host['facts'] = fact_file.result
+    #Load Trunk file into Host Attributes
+    trunk_file = task.run(
+        task=load_yaml,
+        file=f'{dir_fact}/{task.host}_trunk.yml'
+    )
+    task.host['trunk'] = trunk_file.result
 
     #SETUP VLANS
     r = task.run(

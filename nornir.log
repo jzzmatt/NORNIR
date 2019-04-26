@@ -2085,3 +2085,118 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: SETUP BGP (failed)
 2019-04-25 18:13:18,604 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
 2019-04-25 18:14:45,929 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
 2019-04-25 18:17:28,057 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-26 14:33:14,333 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-26 14:34:18,684 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-26 14:58:00,541 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-26 14:59:26,831 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-26 15:01:32,211 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-26 15:02:00,582 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-26 15:03:02,030 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-26 15:04:32,706 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-26 15:13:48,422 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-26 15:14:17,613 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-26 15:40:42,787 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-26 15:40:42,888 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'SETUP BANNER' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 18, in render_from_file
+    return t.render(**kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "./templates/banner.j2", line 1, in top-level template code
+    banner motd &{{ host.motd.banner }}&
+jinja2.exceptions.UndefinedError: 'str object' has no attribute 'banner'
+
+2019-04-26 15:40:42,889 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'push_templates' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 94, in push_templates
+    config += banner_templates(task)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 252, in banner_templates
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: SETUP BANNER (failed)
+
+
+2019-04-26 15:41:29,137 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-26 15:41:29,229 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'SETUP BANNER' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 18, in render_from_file
+    return t.render(**kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "./templates/banner.j2", line 1, in top-level template code
+    banner motd &{{ host['motd'].banner }}&
+jinja2.exceptions.UndefinedError: 'str object' has no attribute 'banner'
+
+2019-04-26 15:41:29,229 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'push_templates' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 94, in push_templates
+    config += banner_templates(task)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 252, in banner_templates
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: SETUP BANNER (failed)
+
+
+2019-04-26 15:43:21,154 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-26 15:43:21,254 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'SETUP BANNER' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/plugins/tasks/text/template_file.py", line 35, in template_file
+    **kwargs
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/helpers/jinja_helper.py", line 18, in render_from_file
+    return t.render(**kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "./templates/banner.j2", line 1, in top-level template code
+    banner motd &{{ host.motd.banner }}&
+jinja2.exceptions.UndefinedError: 'str object' has no attribute 'banner'
+
+2019-04-26 15:43:21,254 - nornir.core.task -    ERROR -      start() - Host 'CoreSPINEcuca01': task 'push_templates' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 67, in start
+    r = self.task(self, **self.params)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 94, in push_templates
+    config += banner_templates(task)
+  File "/Users/juniormateus/PycharmProjects/NORNIR/nornir_autom01.py", line 252, in banner_templates
+    path="./templates/"
+  File "/Users/juniormateus/anaconda3/lib/python3.6/site-packages/nornir/core/task.py", line 124, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: SETUP BANNER (failed)
+
+
+2019-04-26 15:43:35,224 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-26 15:46:46,680 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts
+2019-04-26 15:47:42,827 -  nornir.core -     INFO -        run() - Running task 'push_templates' with args {} on 1 hosts

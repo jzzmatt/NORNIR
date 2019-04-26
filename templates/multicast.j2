@@ -1,3 +1,5 @@
+ip multicast-routing
+!
 {% for intf in host.interfaces %}
 {% if intf.name.startswith('Loopback') or intf['description'].startswith('Link Downstream') or intf['description'].startswith('Link Upstream') %}
 {% if intf.tag is defined %}

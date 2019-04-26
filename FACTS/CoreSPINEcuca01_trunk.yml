@@ -1,0 +1,6 @@
+trunk:
+  range: "g2/1-48, g3/1-48"
+  description: "TRUNK SERVER HOST FARM"
+  mode: dot1q
+  mtu: 9000
+  lacp: None
